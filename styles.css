@@ -1,3 +1,21 @@
+.title {
+  font-size: 19px;
+}
 .player {
   font-size: 50px;
+  padding: 10px;
+}
+header {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  min-width: 260px;
+  justify-content: space-around;
+  background-color: #e9bb35;
+}
+.logo {
+  max-width: 100%;
+}
+.fa-cog {
+  font-size: 22px;
 }
