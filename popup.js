@@ -1,19 +1,30 @@
-// Copyright 2018 The Chromium Authors. All rights reserved.
-// Use of this source code is governed by a BSD-style license that can be
-// found in the LICENSE file.
+const player = document.querySelector(".player");
+player.addEventListener("click", toggleAudio);
 
-'use strict';
+// when the audio is already playing change the player
+// on window load I want to send request to the background to check if it is playing if so toggleIcon!
+window.onload = function() {
+  chrome.runtime.sendMessage({status: "loaded"}, function(response) {
+    if (response.action == "toggleIcon") {
+      player.classList.toggle("fa-stop-circle");
+      player.classList.toggle("fa-play-circle");
+    }
+  });
+}
 
-let changeColor = document.getElementById('changeColor');
-chrome.storage.sync.get('color', function(data) {
-  changeColor.style.backgroundColor = data.color;
-  changeColor.setAttribute('value', data.color);
-});
-changeColor.onclick = function(element) {
-    let color = element.target.value;
-    chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
-      chrome.tabs.executeScript(
-          tabs[0].id,
-          {code: 'document.body.style.backgroundColor = "' + color + '";'});
+// change the player icon and send message to background script to play stream (even when the popup is closed)
+function toggleAudio() {
+  if (player.classList.contains("fa-play-circle")) {
+    chrome.runtime.sendMessage({status: "playing"}, function() {
+      console.log("playing stream");
+      player.classList.toggle("fa-stop-circle");
+      player.classList.toggle("fa-play-circle");
     });
+  } else if (player.classList.contains("fa-stop-circle")) {
+      chrome.runtime.sendMessage({status: "stopped"}, function() {
+        console.log("stopping");
+        player.classList.toggle("fa-stop-circle");
+        player.classList.toggle("fa-play-circle");
+      });
   };
+}

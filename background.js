@@ -1,14 +1,19 @@
-chrome.runtime.onInstalled.addListener(function() {
-  chrome.storage.sync.set({color: '#3aa757'}, function() {
-    console.log("The color is green.");
-  });
-  chrome.declarativeContent.onPageChanged.removeRules(undefined, function() {
-      chrome.declarativeContent.onPageChanged.addRules([{
-        conditions: [new chrome.declarativeContent.PageStateMatcher({
-          pageUrl: {hostEquals: 'developer.chrome.com'},
-        })
-        ],
-            actions: [new chrome.declarativeContent.ShowPageAction()]
-      }]);
-    });
+let audio = new Audio();
+audio.src = "http://europa.shoutca.st:8648/;/;stream.mp3";
+
+// Receiving messages from popup.js to play and stop audio
+chrome.runtime.onMessage.addListener(function(message, sender, sendResponse) {
+    if (message.status == "playing") {
+      audio.play();
+      console.log("audio is playing from background");
+    } else if (message.status == "stopped") {
+      audio.pause();
+      console.log("the audio is paused from background")
+    } else if (message.status == "loaded") {
+      // Every time page loads check if audio is playing if so, send response "toggleIcon"
+        if (!audio.paused) {
+            sendResponse({action: "toggleIcon"});
+            console.log(!audio.paused);
+        }
+    }
 });
