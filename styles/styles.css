@@ -4,19 +4,12 @@
        url('um_sticks-webfont.woff') format('woff'),
        url('um_sticks-webfont.woff2') format('woff2');
 }
+
 .title {
-  font-size: 36px;
+  font-size: 24px;
   font-family: 'UmSticks';
   font-weight: normal;
-}
-span.radioPt {
-  text-transform: uppercase;
-  display:block;
-  font-size: 30px;
-}
-.player {
-  font-size: 50px;
-  padding: 10px;
+  margin: auto;
 }
 header {
   display: flex;
@@ -26,9 +19,52 @@ header {
   justify-content: space-around;
   background-color: #e9bb35;
 }
+.subtitle {
+  font-family: 'UmSticks';
+  font-size: 27px;
+  text-transform: lowercase;
+  margin: auto 0 auto;
+}
+/* Logo and icons */
+.player {
+  font-size: 50px;
+  color: #3f3185;
+  /* padding: 10px; */
+}
 .logo {
   max-width: 100%;
 }
-.fa-cog {
+.fa-cog, .fa-angle-down{
   font-size: 22px;
+  padding: 10px;
+}
+.fa-cog {
+    font-size: 20px;
+}
+.drawer {
+  display: flex;
+  min-width: 200px;
+  justify-content: flex-start;
+  align-items: center;
+}
+/* player info */
+.playerSection {
+  display: flex;
+  min-width: 260px;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 6px;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 3px 0;
+}
+.currentSection {
+  display: flex;
+  flex-direction:column;
+  padding-left: 10px;
+}
+.footer {
+  margin: auto;
 }
