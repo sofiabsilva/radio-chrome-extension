@@ -1,16 +1,19 @@
 const player = document.querySelector(".player");
+const drawer = document.querySelector(".drawer");
+const drawerIcon = document.querySelector(".drawerIcon");
 player.addEventListener("click", toggleAudio);
+drawer.addEventListener("click", lastAired);
 
 // Getting current songs from centovacast JSON
 function currentSongs() {
-  let songInfo = document.querySelector("#currentSong");
-  let albumCover = document.querySelector("#cover");
+  const songInfo = document.querySelector("#currentSong");
+  const albumCover = document.querySelector("#cover");
   let content;
   $.getJSON('https://europa.shoutca.st/rpc/atsueste/streaminfo.get', function(data) {
-      content = `<ul>`;
-          content += `<li>Song: ${data.data[0]['track']['title']}</li>`;
-          content +=`<li>Artist: ${data.data[0]['track']['artist']}</li>`;
-      content += `</ul>`;
+      content = `<ul>
+      <li>Song: ${data.data[0]['track']['title']}</li>
+      <li>Artist: ${data.data[0]['track']['artist']}</li>
+      </ul>`;
       albumCover.src=`${data.data[0]['track']['imageurl']}`;
       songInfo.innerHTML= content;
   });
@@ -18,6 +21,34 @@ function currentSongs() {
 
 // Update song info every 4 seconds
 setInterval(currentSongs, 4000);
+
+// flag to keep track if drawer is open
+let open = false;
+// Get the 10 last aired songs
+function lastAired() {
+const songsList = document.querySelector("#recentSongs");
+  if (!open) {
+    let content;
+    $.getJSON('https://europa.shoutca.st/recentfeed/atsueste/json/', function(data){
+      content = `<ul id ="airedList">`
+        for (i in data.items) {
+          content += `<li>
+          <img src="${data.items[i]['enclosure']['url']}" alt="${data.items[i]['description']}">
+          ${data.items[i]['title']}</li>`;
+        }
+      content +=`</ul>`;
+      recentSongs.innerHTML= content;
+    })
+    open = true;
+    drawerIcon.classList.toggle("fa-angle-down");
+    drawerIcon.classList.toggle("fa-angle-up");
+  } else {
+    songsList.removeChild(songsList.firstChild);
+    open = false;
+    drawerIcon.classList.toggle("fa-angle-down");
+    drawerIcon.classList.toggle("fa-angle-up");
+  }
+}
 
 // When popup is open get current songs and when the audio is already playing change the player icon
 window.onload = function() {
