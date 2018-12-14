@@ -4,13 +4,14 @@ player.addEventListener("click", toggleAudio);
 // Getting current songs from centovacast JSON
 function currentSongs() {
   let songInfo = document.querySelector("#currentSong");
+  let albumCover = document.querySelector("#cover");
   let content;
   $.getJSON('https://europa.shoutca.st/rpc/atsueste/streaminfo.get', function(data) {
       content = `<ul>`;
           content += `<li>Song: ${data.data[0]['track']['title']}</li>`;
-          console.log(JSON.stringify(data.data[0]['track']));
           content +=`<li>Artist: ${data.data[0]['track']['artist']}</li>`;
       content += `</ul>`;
+      albumCover.src=`${data.data[0]['track']['imageurl']}`;
       songInfo.innerHTML= content;
   });
 }

@@ -1,7 +1,6 @@
 @font-face {
   font-family: 'UmSticks';
-  src: url('styles/Um_Sticks.ttf') format('truetype'),
-       url('um_sticks-webfont.woff') format('woff'),
+  src: url('um_sticks-webfont.woff') format('woff'),
        url('um_sticks-webfont.woff2') format('woff2');
 }
 
@@ -58,7 +57,7 @@ max-width: 30%;
 .playerSection {
   display: flex;
   min-width: 260px;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
   padding-left: 6px;
 }
@@ -70,7 +69,8 @@ ul {
 .currentSection {
   display: flex;
   flex-direction:column;
-  padding-left: 10px;
+  padding: 6px;
+
 }
 .footer {
   margin: auto;
