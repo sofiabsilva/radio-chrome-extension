@@ -1,7 +1,6 @@
 const player = document.querySelector(".player");
 player.addEventListener("click", toggleAudio);
 
-
 // Getting current songs from centovacast JSON
 function currentSongs() {
   let songInfo = document.querySelector("#currentSong");
@@ -15,10 +14,11 @@ function currentSongs() {
       songInfo.innerHTML= content;
   });
 }
+
+// Update song info every 5 seconds
 setInterval(currentSongs, 5000);
 
-// when the audio is already playing change the player
-// on window load I want to send request to the background to check if it is playing if so toggleIcon!
+// When popup is open get current songs and when the audio is already playing change the player icon
 window.onload = function() {
   currentSongs();
   chrome.runtime.sendMessage({status: "loaded"}, function(response) {
@@ -29,7 +29,7 @@ window.onload = function() {
   });
 }
 
-// change the player icon and send message to background script to play stream (even when the popup is closed)
+// Change the player icon and send message to background script to play stream (even when the popup is closed)
 function toggleAudio() {
   if (player.classList.contains("fa-play-circle")) {
     chrome.runtime.sendMessage({status: "playing"}, function() {
