@@ -16,8 +16,8 @@ function currentSongs() {
   });
 }
 
-// Update song info every 15 seconds (there's always delay)
-setInterval(currentSongs, 15000);
+// Update song info every 4 seconds
+setInterval(currentSongs, 4000);
 
 // When popup is open get current songs and when the audio is already playing change the player icon
 window.onload = function() {
