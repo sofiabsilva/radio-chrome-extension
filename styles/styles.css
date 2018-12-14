@@ -6,10 +6,11 @@
 }
 
 .title {
-  font-size: 24px;
+  font-size: 26px;
   font-family: 'UmSticks';
   font-weight: normal;
   margin: auto;
+  padding-left: 16px;
 }
 header {
   display: flex;
@@ -24,6 +25,8 @@ header {
   font-size: 27px;
   text-transform: lowercase;
   margin: auto 0 auto;
+  font-weight: normal;
+  color: #3f3185;
 }
 /* Logo and icons */
 .player {
@@ -32,11 +35,15 @@ header {
   /* padding: 10px; */
 }
 .logo {
-  max-width: 100%;
+  display: block;
+margin-left: auto;
+margin-right: auto;
+max-width: 30%;
 }
 .fa-cog, .fa-angle-down{
   font-size: 22px;
   padding: 10px;
+  color: #3f3185;
 }
 .fa-cog {
     font-size: 20px;
