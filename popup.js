@@ -11,8 +11,8 @@ function currentSongs() {
   let content;
   $.getJSON('https://europa.shoutca.st/rpc/atsueste/streaminfo.get', function(data) {
       content = `<ul>
-      <li>Song: ${data.data[0]['track']['title']}</li>
-      <li>Artist: ${data.data[0]['track']['artist']}</li>
+      <li class="songTitle">Song: ${data.data[0]['track']['title']}</li>
+      <li class="artist">Artist: ${data.data[0]['track']['artist']}</li>
       </ul>`;
       albumCover.src=`${data.data[0]['track']['imageurl']}`;
       songInfo.innerHTML= content;
@@ -29,6 +29,7 @@ function lastAired() {
 const songsList = document.querySelector("#recentSongs");
   if (!open) {
     let content;
+    // loading animation
     if (typeof(content) == "undefined") {
     // http://www.ajaxload.info/
     recentSongs.innerHTML= "<img class='loading' alt='loading' src='images/ajax-loader.gif'/>";
@@ -81,3 +82,24 @@ function toggleAudio() {
       });
   };
 }
+
+// detecting the navigator language and changing title
+let userLang = navigator.language || navigator.userLanguage;
+let title = document.querySelector('.title');
+console.log("The language is: " + userLang);
+let pt = /^pt/i;
+let en = /^en/i;
+let fr = /^fr/i;
+let es = /^es/i;
+let de = /^de/i;
+if (pt.test(userLang)) {
+  title.innerText = "música sem fronteiras";
+} else if (fr.test(userLang)) {
+  title.innerText = "musique sans frontières";
+} else if (es.test(userLang)) {
+  title.innerText = "música sin fronteras";
+} else if (de.test(userLang)){
+  title.innerText = "musik ohne grenzen";
+} else {
+  title.innerText = "music without frontiers";
+};

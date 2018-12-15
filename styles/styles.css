@@ -3,6 +3,9 @@
   src: url('um_sticks-webfont.woff') format('woff'),
        url('um_sticks-webfont.woff2') format('woff2');
 }
+
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
+/*  https://fonts.google.com/specimen/Source+Sans+Pro */
 body {
   font-family: 'Arial','Helvetica Neue','Helvetica','sans-serif';
 }
@@ -21,6 +24,11 @@ header {
   justify-content: space-around;
   background-color: #e9bb35; /* yellow */
 }
+
+hr {
+  border: 1px solid #3f3185;
+  margin: 0.5px;
+}
 .subtitle {
   font-family: 'UmSticks';
   font-size: 27px;
@@ -28,6 +36,9 @@ header {
   margin: auto 0 auto;
   font-weight: normal;
   color: #41ab3d;   /* green */
+}
+.lastAired {
+  font-size: 23px;
 }
 /* Logo and icons */
 .player {
