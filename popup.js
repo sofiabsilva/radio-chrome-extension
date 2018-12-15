@@ -35,10 +35,12 @@ const songsList = document.querySelector("#recentSongs");
     }
     $.getJSON('https://europa.shoutca.st/recentfeed/atsueste/json/', function(data) {
       content = `<ul id ="airedList">`
-        for (i in data.items) {
+      let lastFive = Object.entries(data.items).slice(1,6);
+      console.log(lastFive);
+        for (let i = 0; i < lastFive.length; i++) {
           content += `<li>
-          <img src="${data.items[i]['enclosure']['url']}" alt="${data.items[i]['description']}">
-          ${data.items[i]['title']}</li>`;
+          <img src="${lastFive[i][1]['enclosure']['url']}" alt="${lastFive[i][1]['description']}">
+          ${lastFive[i][1]['title']}</li>`;
         }
       content +=`</ul>`;
       recentSongs.innerHTML= content;
