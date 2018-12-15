@@ -17,7 +17,7 @@ header {
   flex-wrap: nowrap;
   min-width: 260px;
   justify-content: space-around;
-  background-color: #e9bb35;
+  background-color: #e9bb35; /* yellow */
 }
 .subtitle {
   font-family: 'UmSticks';
@@ -25,12 +25,12 @@ header {
   text-transform: lowercase;
   margin: auto 0 auto;
   font-weight: normal;
-  color: #3f3185;
+  color: #41ab3d;   /* green */
 }
 /* Logo and icons */
 .player {
   font-size: 50px;
-  color: #3f3185;
+  color: #3f3185; /* purple */
   /* padding: 10px; */
 }
 .logo {
@@ -43,6 +43,9 @@ max-width: 30%;
   font-size: 22px;
   padding: 10px;
   color: #3f3185;
+}
+.fa-angle-down, .fa-angle-up {
+  color: #41ab3d;
 }
 .fa-cog {
     font-size: 20px;
