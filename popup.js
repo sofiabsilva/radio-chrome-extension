@@ -36,7 +36,6 @@ const songsList = document.querySelector("#recentSongs");
     $.getJSON('https://europa.shoutca.st/recentfeed/atsueste/json/', function(data) {
       content = `<ul id ="airedList">`
       let lastFive = Object.entries(data.items).slice(1,6);
-      console.log(lastFive);
         for (let i = 0; i < lastFive.length; i++) {
           content += `<li>
           <img src="${lastFive[i][1]['enclosure']['url']}" alt="${lastFive[i][1]['description']}">
@@ -55,7 +54,6 @@ const songsList = document.querySelector("#recentSongs");
     drawerIcon.classList.toggle("fa-angle-up");
   }
 }
-
 // When popup is open get current songs and when the audio is already playing change the player icon
 window.onload = function() {
   currentSongs();
