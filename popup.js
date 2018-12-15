@@ -29,7 +29,11 @@ function lastAired() {
 const songsList = document.querySelector("#recentSongs");
   if (!open) {
     let content;
-    $.getJSON('https://europa.shoutca.st/recentfeed/atsueste/json/', function(data){
+    if (typeof(content) == "undefined") {
+    // http://www.ajaxload.info/
+    recentSongs.innerHTML= "<img class='loading' alt='loading' src='images/ajax-loader.gif'/>";
+    }
+    $.getJSON('https://europa.shoutca.st/recentfeed/atsueste/json/', function(data) {
       content = `<ul id ="airedList">`
         for (i in data.items) {
           content += `<li>
