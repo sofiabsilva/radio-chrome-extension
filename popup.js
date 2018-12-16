@@ -4,6 +4,8 @@ const drawerIcon = document.querySelector(".drawerIcon");
 player.addEventListener("click", toggleAudio);
 drawer.addEventListener("click", lastAired);
 
+// when not being clicked:
+drawerIcon.removeAttribute("style");
 // Getting current songs from centovacast JSON
 function currentSongs() {
   const songInfo = document.querySelector("#currentSong");
@@ -26,9 +28,14 @@ setInterval(currentSongs, 4000);
 let open = false;
 // Get the 10 last aired songs
 function lastAired() {
-const songsList = document.querySelector("#recentSongs");
+  // toggle icons
+  drawerIcon.classList.toggle("fa-angle-down");
+  drawerIcon.classList.toggle("fa-angle-up");
+  const songsList = document.querySelector("#recentSongs");
   if (!open) {
+    drawerIcon.classList.toggle("open");
     let content;
+      // drawerIcon.removeAttribute("style");
     // loading animation
     if (typeof(content) == "undefined") {
     // http://www.ajaxload.info/
@@ -46,15 +53,14 @@ const songsList = document.querySelector("#recentSongs");
       recentSongs.innerHTML= content;
     })
     open = true;
-    drawerIcon.classList.toggle("fa-angle-down");
-    drawerIcon.classList.toggle("fa-angle-up");
   } else {
-    songsList.removeChild(songsList.firstChild);
     open = false;
-    drawerIcon.classList.toggle("fa-angle-down");
-    drawerIcon.classList.toggle("fa-angle-up");
+    drawerIcon.classList.toggle("closed");
+    airedList.classList.toggle("slideUp");
+    setTimeout(function(){songsList.removeChild(songsList.firstChild);}, 300);
   }
 }
+
 // When popup is open get current songs and when the audio is already playing change the player icon
 window.onload = function() {
   currentSongs();
@@ -88,7 +94,6 @@ let userLang = navigator.language || navigator.userLanguage;
 let title = document.querySelector('.title');
 console.log("The language is: " + userLang);
 let pt = /^pt/i;
-let en = /^en/i;
 let fr = /^fr/i;
 let es = /^es/i;
 let de = /^de/i;

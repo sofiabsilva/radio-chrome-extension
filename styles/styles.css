@@ -1,4 +1,5 @@
 @font-face {
+  /* 1001 fonts - Um Sticks by Gem Fonts*/
   font-family: 'UmSticks';
   src: url('um_sticks-webfont.woff') format('woff'),
        url('um_sticks-webfont.woff2') format('woff2');
@@ -6,6 +7,40 @@
 
 @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
 /*  https://fonts.google.com/specimen/Source+Sans+Pro */
+/* setting up animations */
+@keyframes slide-down {
+    0% {
+        height: 0;
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    100% {
+        height: 100%;
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes rotate {
+  0% {
+    transform: rotate(90deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+@keyframes slide-up {
+    0% {
+      height: 100%;
+      opacity: 1;
+      transform: translateY(0);
+    }
+    100% {
+      height: 0;
+      opacity: 0;
+      transform: translateY(-30px);
+    }
+}
+
 body {
   font-family: 'Arial','Helvetica Neue','Helvetica','sans-serif';
 }
@@ -59,7 +94,7 @@ hr {
 .fa-cog, .fa-angle-down, .fa-angle-up {
   font-size: 22px;
   padding: 10px;
-  color: #3f3185;
+  color: #3f3185; /*  purple */
 }
 .fa-angle-down, .fa-angle-up {
   color: #41ab3d;
@@ -103,12 +138,31 @@ ul {
 #airedList li {
   display: flex;
   align-items: center;
-  padding: 5px 0;
+  padding: 4px 0;
+  animation: slide-down 0.4s ease;
+}
+.slideUp {
+  animation: slide-up 0.4s ease;
 }
 #airedList li img {
   padding-right: 4px;
 }
+.open, .closed {
+  animation: rotate 0.5s ease;
+  /* transform: rotate(180deg);  */
+}
 /* footer */
 footer {
   text-align: center;
+}
+.socialmedia {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 5px;
+}
+.socialmedia .fab {
+  font-size: 16px;
+}
+.socialmedia a {
+  padding: 5px;
 }
