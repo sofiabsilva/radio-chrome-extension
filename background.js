@@ -1,5 +1,4 @@
 let audio = new Audio();
-//audio.src = "http://europa.shoutca.st:8648/;/;stream.mp3";
 
 // Receiving messages from popup.js to play and stop audio
 chrome.runtime.onMessage.addListener(function(message, sender, sendResponse) {

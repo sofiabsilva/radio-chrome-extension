@@ -177,6 +177,10 @@ footer {
   min-width: 260px;
   flex-direction:column;
 }
+#optionsContainer a {
+  text-align: center;
+  padding-top: 10px;
+}
 .optionText {
   font-size: 14px;
 }
