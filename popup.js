@@ -13,8 +13,8 @@ function currentSongs() {
   let content;
   $.getJSON('https://europa.shoutca.st/rpc/atsueste/streaminfo.get', function(data) {
       content = `<ul>
-      <li class="songTitle">Song: ${data.data[0]['track']['title']}</li>
       <li class="artist">Artist: ${data.data[0]['track']['artist']}</li>
+      <li class="songTitle">Song: ${data.data[0]['track']['title']}</li>
       </ul>`;
       albumCover.src=`${data.data[0]['track']['imageurl']}`;
       songInfo.innerHTML= content;
@@ -51,7 +51,7 @@ function lastAired() {
     }
     $.getJSON('https://europa.shoutca.st/recentfeed/atsueste/json/', function(data) {
       content = `<ul id ="airedList">`
-      let lastFive = Object.entries(data.items).slice(1,6);
+      let lastFive = Object.entries(data.items).slice(1,5);
         for (let i = 0; i < lastFive.length; i++) {
           content += `<li>
           <img src="${lastFive[i][1]['enclosure']['url']}" alt="${lastFive[i][1]['description']}">
