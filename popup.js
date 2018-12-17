@@ -1,5 +1,5 @@
 const player = document.querySelector(".player");
-const drawer = document.querySelector(".drawer");
+const drawer = document.querySelector("#drawer");
 const drawerIcon = document.querySelector(".drawerIcon");
 player.addEventListener("click", toggleAudio);
 drawer.addEventListener("click", lastAired);
@@ -32,10 +32,18 @@ function lastAired() {
   drawerIcon.classList.toggle("fa-angle-down");
   drawerIcon.classList.toggle("fa-angle-up");
   const songsList = document.querySelector("#recentSongs");
+
+  if (drawerIcon.classList.contains("fa-angle-down")) {
+      drawerIcon.classList.add("open");
+      drawerIcon.classList.remove("closed");
+  }
+  // if drawerIcon contains angle up when button clicked
+  if (drawerIcon.classList.contains("fa-angle-up")) {
+      drawerIcon.classList.remove("open");
+      drawerIcon.classList.add("closed");
+  }
   if (!open) {
-    drawerIcon.classList.toggle("open");
     let content;
-      // drawerIcon.removeAttribute("style");
     // loading animation
     if (typeof(content) == "undefined") {
     // http://www.ajaxload.info/
@@ -55,7 +63,6 @@ function lastAired() {
     open = true;
   } else {
     open = false;
-    drawerIcon.classList.toggle("closed");
     airedList.classList.toggle("slideUp");
     setTimeout(function(){songsList.removeChild(songsList.firstChild);}, 300);
   }
@@ -92,7 +99,6 @@ function toggleAudio() {
 // detecting the navigator language and changing title
 let userLang = navigator.language || navigator.userLanguage;
 let title = document.querySelector('.title');
-console.log("The language is: " + userLang);
 let pt = /^pt/i;
 let fr = /^fr/i;
 let es = /^es/i;
