@@ -25,6 +25,5 @@ function restore_options() {
     document.querySelector('.ios-switch').checked = items.mute;
   });
 }
-// document.addEventListener('DOMContentLoaded', restore_options);
-// document.getElementById('save').addEventListener('click',
-//     save_options);
+document.addEventListener('DOMContentLoaded', restore_options);
+document.querySelector('.ios-switch').addEventListener('change', save_options);
