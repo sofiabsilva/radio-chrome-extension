@@ -13,8 +13,8 @@ function currentSongs() {
   let content;
   $.getJSON('https://europa.shoutca.st/rpc/atsueste/streaminfo.get', function(data) {
       content = `<ul>
-      <li class="artist">Artist: ${data.data[0]['track']['artist']}</li>
-      <li class="songTitle">Song: ${data.data[0]['track']['title']}</li>
+      <li class="artist">${data.data[0]['track']['artist']}</li>
+      <li class="songTitle">${data.data[0]['track']['title']}</li>
       </ul>`;
       albumCover.src=`${data.data[0]['track']['imageurl']}`;
       songInfo.innerHTML= content;
