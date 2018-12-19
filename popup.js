@@ -54,7 +54,7 @@ function lastAired() {
       let lastFive = Object.entries(data.items).slice(1,5);
         for (let i = 0; i < lastFive.length; i++) {
           content += `<li>
-          <img src="${lastFive[i][1]['enclosure']['url']}" alt="${lastFive[i][1]['description']}">
+          <img class="albumCover" src="${lastFive[i][1]['enclosure']['url']}" alt="${lastFive[i][1]['description']}">
           ${lastFive[i][1]['title']}</li>`;
         }
       content +=`</ul>`;
