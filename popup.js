@@ -83,13 +83,11 @@ window.onload = function() {
 function toggleAudio() {
   if (player.classList.contains("fa-play-circle")) {
     chrome.runtime.sendMessage({status: "playing"}, function() {
-      console.log("playing stream");
       player.classList.toggle("fa-stop-circle");
       player.classList.toggle("fa-play-circle");
     });
   } else if (player.classList.contains("fa-stop-circle")) {
       chrome.runtime.sendMessage({status: "stopped"}, function() {
-        console.log("stopping");
         player.classList.toggle("fa-stop-circle");
         player.classList.toggle("fa-play-circle");
       });

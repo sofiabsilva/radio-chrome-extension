@@ -1,11 +1,9 @@
 let audio = new Audio();
 
 // option to turn off sound of extension when another tab is audible
-
 let tabAudio;
 function checkTabs() {
   chrome.storage.sync.get(['mute'], function(result) {
-                console.log(result.mute);
           if (result.mute) {
             chrome.tabs.query({audible: true}, function callback(data) {
               // when a tab is audible
@@ -30,7 +28,6 @@ function stopAudio() {
   audio.pause();
   audio.src = "";
   audio = new Audio();
-  console.log(audio.src);
 }
 
 // Receiving messages from popup.js to play and stop audio
