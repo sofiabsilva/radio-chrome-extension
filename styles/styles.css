@@ -81,6 +81,10 @@ hr {
 .player {
   font-size: 50px;
   color: #3f3185; /* purple */
+  transition: 0.2s;
+}
+.player:hover {
+  color: #e84724;  /* red */
 }
 .logo {
   display: block;
@@ -133,6 +137,12 @@ ul {
   align-items: center;
   cursor: pointer;
 }
+#drawer i {
+  transition: 0.2s;
+}
+#drawer i:hover {
+  color: #e84724; /* red */
+}
 .loading {
   margin: auto;
   display: block;
@@ -167,6 +177,12 @@ footer {
   text-decoration: none;
   font-size: 13px;
   font-family: inherit;
+  color: #3f3185;
+  transition: 0.2s;
+  border-bottom: 1px solid transparent;
+}
+.website:hover {
+  border-bottom: 1px solid #3f3185;
 }
 .socialmedia {
   display: flex;
@@ -178,6 +194,10 @@ footer {
 }
 .socialmedia a {
   padding: 5px;
+  transition: 0.2s;
+}
+.socialmedia a:hover {
+   color: #e84724;  /* red */
 }
 
 /* specific styles to options */
