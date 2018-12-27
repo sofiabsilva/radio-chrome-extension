@@ -1,6 +1,6 @@
 let audio = new Audio();
 
-// option to turn off sound of extension when another tab is audible
+// Option to turn off sound of extension when another tab is audible
 let tabAudio;
 function checkTabs() {
   chrome.storage.sync.get(['mute'], function(result) {

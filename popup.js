@@ -4,7 +4,7 @@ const drawerIcon = document.querySelector(".drawerIcon");
 player.addEventListener("click", toggleAudio);
 drawer.addEventListener("click", lastAired);
 
-// when not being clicked:
+// When not being clicked:
 drawerIcon.removeAttribute("style");
 // Getting current songs from centovacast JSON
 function currentSongs() {
@@ -24,11 +24,11 @@ function currentSongs() {
 // Update song info every 4 seconds
 setInterval(currentSongs, 4000);
 
-// flag to keep track if drawer is open
+// Flag to keep track if drawer is open
 let open = false;
 // Get the 10 last aired songs
 function lastAired() {
-  // toggle icons
+  // Toggle icons
   drawerIcon.classList.toggle("fa-angle-down");
   drawerIcon.classList.toggle("fa-angle-up");
   const songsList = document.querySelector("#recentSongs");
@@ -37,14 +37,14 @@ function lastAired() {
       drawerIcon.classList.add("open");
       drawerIcon.classList.remove("closed");
   }
-  // if drawerIcon contains angle up when button clicked
+  // If drawerIcon contains angle up when button clicked
   if (drawerIcon.classList.contains("fa-angle-up")) {
       drawerIcon.classList.remove("open");
       drawerIcon.classList.add("closed");
   }
   if (!open) {
     let content;
-    // loading animation
+    // Loading animation
     if (typeof(content) == "undefined") {
     // http://www.ajaxload.info/
     recentSongs.innerHTML= "<img class='loading' alt='loading' src='images/ajax-loader.gif'/>";
@@ -94,7 +94,7 @@ function toggleAudio() {
   };
 }
 
-// detecting the navigator language and changing title
+// Detecting the navigator language and changing title
 let userLang = navigator.language || navigator.userLanguage;
 let title = document.querySelector('.title');
 let pt = /^pt/i;

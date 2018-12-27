@@ -5,7 +5,7 @@
        url('um_sticks-webfont.woff2') format('woff2');
 }
 
-/* setting up animations */
+/* Setting up animations */
 @keyframes slide-down {
   0% {
       opacity: 0;
@@ -43,6 +43,7 @@
   }
 }
 
+/* Main styles */
 body {
   font-family: 'Arial','Helvetica Neue','Helvetica','sans-serif';
 }
@@ -64,7 +65,6 @@ header {
   justify-content: space-around;
   background-color: #e9bb35; /* yellow */
 }
-
 hr {
   border: 0.5px solid #3f3185;
 }
@@ -132,7 +132,7 @@ ul {
   font-weight: bold;
 }
 
-/* recent played */
+/* Recent played */
 #drawer {
   display: flex;
   min-width: 200px;
@@ -172,7 +172,7 @@ ul {
   max-width: 60px;
 }
 
-/* footer */
+/* Footer */
 footer {
   text-align: center;
 }
@@ -203,7 +203,7 @@ footer {
    color: #e84724;  /* red */
 }
 
-/* specific styles to options */
+/* Specific styles to options */
 #optionsContainer {
   display: flex;
   min-width: 260px;
