@@ -6,7 +6,7 @@ function checkTabs() {
   chrome.storage.sync.get(['mute'], function(result) {
           if (result.mute) {
             chrome.tabs.query({audible: true}, function callback(data) {
-              // when a tab is audible
+              // When a tab is audible
               if (!audio.paused && data.length > 0) {
                   tabAudio = true;
                   stopAudio();
