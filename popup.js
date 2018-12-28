@@ -94,6 +94,17 @@ function toggleAudio() {
   };
 }
 
+// Animate drawerIcon on whole drawer div
+drawer.addEventListener("mouseover", function transitionOn() {
+  drawerIcon.style.color = "#e84724";
+})
+drawer.addEventListener("mouseout", function transitionOff() {
+  drawerIcon.style.color = "#41ab3d";
+})
+
+
+
+
 // Detecting the navigator language and changing title
 let userLang = navigator.language || navigator.userLanguage;
 let title = document.querySelector('.title');

@@ -140,12 +140,11 @@ ul {
   align-items: center;
   cursor: pointer;
 }
-#drawer i {
+.drawerIcon {
   transition: 0.2s;
+  padding-top: 12px;
 }
-#drawer i:hover {
-  color: #e84724; /* red */
-}
+
 .loading {
   margin: auto;
   display: block;
