@@ -183,6 +183,7 @@ footer {
   font-size: 13px;
   font-family: inherit;
   color: #3f3185;
+  padding: 1px;
   transition: 0.2s;
   border-bottom: 1px solid transparent;
 }
