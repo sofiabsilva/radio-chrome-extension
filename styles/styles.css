@@ -131,6 +131,9 @@ ul {
 .artist {
   font-weight: bold;
 }
+.cover {
+  max-width: 70px;
+}
 
 /* Recent played */
 #drawer {
