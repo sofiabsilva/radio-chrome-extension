@@ -1,5 +1,11 @@
 let audio = new Audio();
 
+chrome.runtime.onInstalled.addListener(function() {
+  chrome.storage.sync.set({
+    mute: true
+  })
+})
+
 // Option to turn off sound of extension when another tab is audible
 let tabAudio;
 function checkTabs() {
@@ -18,6 +24,7 @@ function checkTabs() {
           }
         });
 }
+
 setInterval(checkTabs, 1000);
 
 function playAudio() {
