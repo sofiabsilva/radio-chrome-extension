@@ -66,7 +66,8 @@ header {
   background-color: #e9bb35; /* yellow */
 }
 hr {
-  border: 0.5px solid #3f3185;
+  border: 1px solid #3f3185;
+  margin: 0;
 }
 .subtitle {
   font-family: 'UmSticks';
@@ -177,6 +178,7 @@ ul {
 /* Footer */
 footer {
   text-align: center;
+  padding-top: 3px;
 }
 .website {
   text-decoration: none;
