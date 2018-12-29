@@ -10,20 +10,18 @@
   "browser_action": {
     "default_popup": "popup.html",
     "default_icon": {
-      "16": "images/grooveradio16.png",
-      "24": "images/grooveradio24.png",
-      "32": "images/grooveradio32.png",
-      "48": "images/grooveradio48.png",
-      "128": "images/grooveradio128.png"
+      "16": "images/Groove_Play_16.png",
+      "24": "images/Groove_Play_24.png",
+      "48": "images/Groove_Play_48.png",
+      "128": "images/Groove_Play_128.png"
     }
   },
   "options_page": "options.html",
   "icons": {
-    "16": "images/grooveradio16.png",
-    "24": "images/grooveradio24.png",
-    "32": "images/grooveradio32.png",
-    "48": "images/grooveradio48.png",
-    "128": "images/grooveradio128.png"
+    "16": "images/Groove_Play_16.png",
+    "24": "images/Groove_Play_24.png",
+    "48": "images/Groove_Play_48.png",
+    "128": "images/Groove_Play_128.png"
     },
     "manifest_version": 2
 }
