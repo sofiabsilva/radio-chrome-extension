@@ -201,6 +201,7 @@ footer {
 .socialmedia a {
   padding: 5px;
   transition: 0.2s;
+  color: #3f3185; /* purple */
 }
 .socialmedia a:hover {
    color: #e84724;  /* red */
