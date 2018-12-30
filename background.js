@@ -1,5 +1,6 @@
 let audio = new Audio();
 
+// Store default option
 chrome.runtime.onInstalled.addListener(function() {
   chrome.storage.sync.set({
     mute: true

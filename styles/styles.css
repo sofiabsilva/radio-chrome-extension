@@ -132,7 +132,7 @@ ul {
 .artist {
   font-weight: bold;
 }
-.cover {
+#cover {
   max-width: 70px;
 }
 
