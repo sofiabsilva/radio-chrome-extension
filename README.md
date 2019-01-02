@@ -11,5 +11,4 @@
 ### Installation:
 The extension is on the [chrome web store](https://chrome.google.com/webstore/detail/groove-radio-pt/aadficocbpaijelnmdkhjdkfdnikggka?hl=en&authuser=1), install as a normal extension.
 
-Developed and designed by [Sofia Silva](https://github.com/sofiabsilva)
-Feedback welcome!
+Developed and designed by [Sofia Silva](https://github.com/sofiabsilva). Feedback welcome!
