@@ -8,4 +8,7 @@
  - Changes title ("music without frontiers") according to default browser language (PT, ES, DE, FR, EN - default)
  - Has an option (that is enabled by default) to mute the radio stream if any other tab is audible (for example when watching a youtube or facebook video), and when an audible tab is no longer detected the stream restarts
 
-Developed and designed by [Sofia Silva](https://github.com/sofiabsilva)
+### Installation:
+The extension is on the [chrome web store](https://chrome.google.com/webstore/detail/groove-radio-pt/aadficocbpaijelnmdkhjdkfdnikggka?hl=en&authuser=1), install as a normal extension.
+
+Developed and designed by [Sofia Silva](https://github.com/sofiabsilva). Feedback welcome!
