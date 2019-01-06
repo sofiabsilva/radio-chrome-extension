@@ -1,0 +1,34 @@
+{
+  "name": "radio-chrome-extension",
+  "version": "1.0.0",
+  "description": "chrome extension for Groove Radio PT",
+  "main": "background.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "./node_modules/.bin/eslint . ./**/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sofiabsilva/radio-chrome-extension.git"
+  },
+  "keywords": [
+    "chrome",
+    "extension",
+    "radio"
+  ],
+  "author": "Sofia Silva",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sofiabsilva/radio-chrome-extension/issues"
+  },
+  "homepage": "https://github.com/sofiabsilva/radio-chrome-extension#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "eslint": "^5.12.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-node": "^8.0.1",
+    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-standard": "^4.0.0"
+  }
+}
