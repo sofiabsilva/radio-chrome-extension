@@ -1,0 +1,12 @@
+{
+    "extends": "standard",
+    "env": {
+        "webextensions": true
+    },
+    "globals": {
+          "$": true,
+          "recentSongs": true,
+          "airedList": true,
+          "Audio": true
+    }
+}
