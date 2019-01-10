@@ -14,4 +14,6 @@ The extension is on the [chrome web store](https://chrome.google.com/webstore/de
 ### Development:
 Fork the repo and run ``npm install`` on the repo, to do lint check run ``npm run lint``.
 
+<hr>
+
 Developed and designed by [Sofia Silva](https://github.com/sofiabsilva). Feedback welcome!
