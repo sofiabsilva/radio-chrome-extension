@@ -46,8 +46,8 @@ function lastAired () {
     let content
     // Loading animation
     if (typeof (content) === 'undefined') {
-      // http://www.ajaxload.info/
-      recentSongs.innerHTML = "<img class='loading' alt='loading' src='images/ajax-loader.gif'/>"
+      // Loader from: https://icons8.com/preloaders/en/circular/vinyl-record/
+      recentSongs.innerHTML = "<img class='loading' alt='loading' src='images/vynil_loader.gif'/>"
     }
     $.getJSON('https://europa.shoutca.st/recentfeed/atsueste/json/', function (data) {
       content = `<ul id ='airedList'>`
