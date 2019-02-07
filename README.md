@@ -1,4 +1,4 @@
-# Groove Radio PT chrome extension
+# Groove Radio PT chrome extension [![Build Status](https://travis-ci.com/sofiabsilva/radio-chrome-extension.svg)](https://travis-ci.com/sofiabsilva/radio-chrome-extension)
 
 ### Main features:
  - User can play/pause the stream from a shoutcast when extension icon is clicked and the popup appears (in this case from [Groove Radio PT](https://grooveradiopt.com/))
@@ -10,5 +10,10 @@
 
 ### Installation:
 The extension is on the [chrome web store](https://chrome.google.com/webstore/detail/groove-radio-pt/aadficocbpaijelnmdkhjdkfdnikggka?hl=en&authuser=1), install as a normal extension.
+
+### Development:
+Fork the repo and run ``npm install`` on the repo, to do lint check run ``npm run lint``.
+
+<hr>
 
 Developed and designed by [Sofia Silva](https://github.com/sofiabsilva). Feedback welcome!
