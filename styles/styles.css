@@ -150,6 +150,7 @@ ul {
 }
 
 .loading {
+  padding: 6px 0;
   margin: auto;
   display: block;
 }
