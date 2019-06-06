@@ -22,7 +22,9 @@
     "url": "https://github.com/sofiabsilva/radio-chrome-extension/issues"
   },
   "homepage": "https://github.com/sofiabsilva/radio-chrome-extension#readme",
-  "dependencies": {},
+  "dependencies": {
+    "js-yaml": "^3.13.1"
+  },
   "devDependencies": {
     "eslint": "^5.12.0",
     "eslint-config-standard": "^12.0.0",
