@@ -1,6 +1,6 @@
 {
   "name": "Groove Radio PT",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Listen to the Groove Radio while browsing the web!",
   "permissions": ["storage"],
   "background": {
@@ -23,5 +23,5 @@
     "48": "images/Groove_Play_48.png",
     "128": "images/Groove_Play_128.png"
     },
-    "manifest_version": 2
+    "manifest_version": 3
 }
