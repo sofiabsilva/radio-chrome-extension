@@ -24,7 +24,7 @@
   "homepage": "https://github.com/sofiabsilva/radio-chrome-extension#readme",
   "dependencies": {
     "js-yaml": "^3.13.1",
-    "lodash": "^4.17.15"
+    "lodash": "^4.17.21"
   },
   "devDependencies": {
     "eslint": "^5.16.0",
